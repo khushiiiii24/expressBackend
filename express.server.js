@@ -32,7 +32,13 @@ app.put("/name/update/:id",(req,res)=>{
     res.send(newData);
 })
 
+app.delete("/name/delete/:id",(req,res)=>{
+    let {id}=req.params
+    id=Number(id)
 
+   data = data.filter((obj) => obj.id !== id);
+  res.send(data);
+})
  app.listen(port,()=>{
     console.log("Server is started "+port);
     
